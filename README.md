@@ -1,6 +1,6 @@
 # BrightBytes
 
-=======
+
 **BrightBytes** is a full-stack learning dashboard with role-based access for **Learners, Educators, and Coordinators**.
 It provides course management, assignments, quizzes, and grading features through a React frontend and an Express + MongoDB backend.
 
@@ -47,30 +47,29 @@ project_cgpc/
 # Setup
 
 ## Backend
->>>>>>> 211a5ad98ed20672a84524bdb14533d2716dad8f
+
 
 ```bash
 cd server
 npm install
 ```
 
-=======
 Set MongoDB connection:
->>>>>>> 211a5ad98ed20672a84524bdb14533d2716dad8f
+
 
 ```bash
 export ATLAS_URI="your-mongodb-connection-string"
 ```
 
-=======
+
 Start server:
->>>>>>> 211a5ad98ed20672a84524bdb14533d2716dad8f
+
 
 ```bash
 node server.js
 ```
 
-=======
+
 Backend runs on:
 
 ```
@@ -80,7 +79,7 @@ http://localhost:5050
 ---
 
 ## Frontend
->>>>>>> 211a5ad98ed20672a84524bdb14533d2716dad8f
+
 
 ```bash
 cd client
@@ -112,5 +111,5 @@ Main resources:
 * `/quizzes`
 * `/submissions`
 * `/quiz_results`
->>>>>>> 211a5ad98ed20672a84524bdb14533d2716dad8f
+
 
