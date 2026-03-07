@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createUser } from "../utils/api";
 
 const Signup = () => {
 
@@ -25,15 +26,9 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5050/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
+      const response = await createUser(formData);
 
-      if (response.ok) {
+      if (response && response.status >= 200 && response.status < 300) {
         alert("Signup successful! Please login.");
         navigate("/login");
       } else {
@@ -46,7 +41,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
       <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-2xl w-full max-w-md p-0 flex flex-col items-center border border-slate-200 dark:border-slate-700">
         <div className="w-full flex flex-col items-center p-8 pb-4">
           <h2 className="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-2 text-center">Create Your Account</h2>

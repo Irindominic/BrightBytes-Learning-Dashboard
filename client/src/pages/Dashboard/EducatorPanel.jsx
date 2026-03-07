@@ -45,7 +45,7 @@ const EducatorPanel = () => {
               className="block p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:scale-105 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-200 text-center"
             >
               <div
-                className={`mx-auto w-24 h-24 rounded-full bg-linear-to-br ${c.color} flex items-center justify-center text-5xl mb-6 shadow-lg text-white`}
+                className={`mx-auto w-24 h-24 rounded-full bg-gradient-to-br ${c.color} flex items-center justify-center text-5xl mb-6 shadow-lg text-white`}
               >
                 {c.icon}
               </div>

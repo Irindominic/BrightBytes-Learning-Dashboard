@@ -75,7 +75,7 @@ const ResetPassword = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
         <div className="text-slate-700 dark:text-slate-200">Loading...</div>
       </div>
     );
@@ -83,7 +83,7 @@ const ResetPassword = () => {
 
   if (!valid) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
         <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-2xl w-full max-w-md p-8 border border-slate-200 dark:border-slate-700 text-center">
           <h2 className="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-2">Invalid or Expired Link</h2>
           <p className="text-slate-600 dark:text-slate-400 mb-4">Request a new password reset link.</p>
@@ -99,7 +99,7 @@ const ResetPassword = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 p-4">
       <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-2xl w-full max-w-md p-8 border border-slate-200 dark:border-slate-700">
         <h2 className="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-2 text-center">
           Reset Password
@@ -156,4 +156,3 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
-
