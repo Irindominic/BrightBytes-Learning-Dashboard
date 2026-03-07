@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import bgLogin from "../assets/login_image.jpeg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Login = () => {
       <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-2xl w-full max-w-md p-0 flex flex-col items-center border border-slate-200 dark:border-slate-700 overflow-hidden">
         <div className="w-full flex flex-col items-center p-0 pb-0">
           <img
-            src="/src/assets/login_image.jpeg"
+            src={bgLogin}
             alt="Login illustration"
             className="w-full h-99 object-cover object-top rounded-t-2xl"
             style={{ marginBottom: '-8px' }}
