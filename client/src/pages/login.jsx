@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import bgLogin from "../assets/login_image.jpeg";
+import { getUsers } from "../utils/api";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,8 +16,8 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5050/users");
-      const users = await response.json();
+      const response = await getUsers();
+      const users = response?.data || [];
 
       // Check user credentials
       const user = users.find(

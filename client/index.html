@@ -8,7 +8,11 @@
     <script>
       (function () {
         try {
-          var t = localStorage.getItem('theme') || 'light';
+          var t = localStorage.getItem('theme');
+          if (!t) {
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            t = prefersDark ? 'dark' : 'light';
+          }
           document.documentElement.classList.remove('light','dark');
           document.documentElement.classList.add(t === 'dark' ? 'dark' : 'light');
           document.documentElement.setAttribute('data-theme', t);
