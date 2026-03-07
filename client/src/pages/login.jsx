@@ -3,10 +3,12 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import bgLogin from "../assets/login_image.jpeg";
 import { getUsers } from "../utils/api";
+import { useTheme } from "../context/ThemeContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
+  const { setTheme } = useTheme();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +29,10 @@ const Login = () => {
       if (user) {
         alert("Login Successful");
         login(user);
+        const savedTheme = localStorage.getItem("theme");
+        if (!savedTheme && (user?.theme === "dark" || user?.theme === "light")) {
+          setTheme(user.theme);
+        }
         if (rememberMe) localStorage.setItem("rememberMe", "true");
         if (rememberMe) {
           localStorage.setItem("rememberMe", JSON.stringify(true));

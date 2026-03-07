@@ -36,6 +36,7 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
       role: req.body.role, // coordinator / educator / learner
+      theme: req.body.theme, // 'light' | 'dark' (optional)
       courses_enrolled: [],
       created_at: new Date(),
     };
@@ -62,6 +63,7 @@ router.patch("/:id", async (req, res) => {
     if (req.body.role !== undefined) $set.role = req.body.role;
     if (req.body.password !== undefined) $set.password = req.body.password;
     if (req.body.courses_enrolled !== undefined) $set.courses_enrolled = req.body.courses_enrolled;
+    if (req.body.theme !== undefined) $set.theme = req.body.theme;
 
     const updates = Object.keys($set).length ? { $set } : {};
 

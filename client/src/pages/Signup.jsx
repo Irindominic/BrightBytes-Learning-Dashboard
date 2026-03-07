@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../utils/api";
+import { useTheme } from "../context/ThemeContext";
 
 const Signup = () => {
 
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -26,7 +28,8 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await createUser(formData);
+      const payload = { ...formData, theme: theme === "dark" ? "dark" : "light" };
+      const response = await createUser(payload);
 
       if (response && response.status >= 200 && response.status < 300) {
         alert("Signup successful! Please login.");
