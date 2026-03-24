@@ -12,6 +12,7 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
+    confirm: "",
     role: ""
   });
 
@@ -28,7 +29,12 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const payload = { ...formData, theme: theme === "dark" ? "dark" : "light" };
+      if (formData.password !== formData.confirm) {
+        alert("Passwords do not match");
+        return;
+      }
+      const { name, email, password, role } = formData;
+      const payload = { name, email, password, role, theme: theme === "dark" ? "dark" : "light" };
       const response = await createUser(payload);
 
       if (response && response.status >= 200 && response.status < 300) {
@@ -79,6 +85,17 @@ const Signup = () => {
               type="password"
               name="password"
               placeholder="Create a password"
+              className="border border-slate-300 dark:border-slate-600 p-2 w-full rounded-lg bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-slate-700 dark:text-slate-200 font-semibold mb-1">Confirm Password</label>
+            <input
+              type="password"
+              name="confirm"
+              placeholder="Confirm password"
               className="border border-slate-300 dark:border-slate-600 p-2 w-full rounded-lg bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-400"
               onChange={handleChange}
               required
